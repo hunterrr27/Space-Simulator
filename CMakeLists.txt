@@ -16,10 +16,16 @@ FetchContent_Declare(
 # 3. Make raylib available
 FetchContent_MakeAvailable(raylib)
 
+# find raygui.h (also in Homebrew include on your machine)
+find_path(RAYGUI_INCLUDE_DIR raygui.h
+    PATHS /opt/homebrew/include /usr/local/include
+    REQUIRED
+)
+
 # 4. Define your executable
 add_executable(${PROJECT_NAME} main.cpp )
 
-target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR} ${RAYGUI_INCLUDE_DIR})
 
 # 5. Link raylib to your executable
 # 'raylib' is the name of the target provided by the fetched library
