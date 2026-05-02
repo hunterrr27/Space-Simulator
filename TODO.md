@@ -3,3 +3,4 @@
 [ ] Fix sliders for timeScale and G force
 [ ] Fix enablecursor logic so sliders and click body works
     [ ] add popup GUI so user can edit body settings such as mass, velocity, etc
+[ ] Add addPlanet logic so you can add new planets while in window

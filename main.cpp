@@ -104,6 +104,8 @@ int main(void) {
                 DrawGrid(20.0f, 10.0f);
                 for (auto& b : space.bodies) {
                     b.Draw();
+                    DrawLine3D(b.position, b.velocity, RED);
+                    
                 }
             EndMode3D();
             //space.G = GuiSlider((Rectangle){60,120,200,20}, "G Force", NULL, &space.G, 0.0f, 10.0f);
@@ -124,7 +126,7 @@ int main(void) {
                         break;
                     }
                 }
-                // Optional: if (!hitAnything) selectedBody = nullptr;
+                if (!hitAnything) selectedBody = nullptr;
             }
 
             // 2. Draw UI for selection
